@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="p">
+      <form action="signup.php" method="post" onsubmit="return validateForm()">
+    <div class="imgcontainer">
+      <img src="ccc.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+       <p style="color: red" id="name_error"></p>
+      <input id="uname" type="text" placeholder="Enter Username" name="uname" ><br>
+     
+
+      <label for="uname"><b>Email</b></label>
+      <p style="color: red" id="email_error"></p>
+      <input id="email" type="email" placeholder="Enter email" name="mail" required=""><br>
+
+      <label for="psw"><b>Password</b></label>
+      <p style="color: red" id="pass_error"></p>
+      <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw"><b>Confirm Password</b></label>
+      
+      <input id="confirm" type="password" placeholder="confirm Password" name="pssw" required>
+
+      <span id="passwordError" class="error"></span>
+
+      <button type="submit">
+            Submit
+          </button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember
+      </label>
+    </div>
+
+
+
+    </form>
+
+    </div>
+    <main>
+
+
+    </main>
+
+
+    <footer>
+      <p>&copy; 2023 CUEA Transport Management </p>
+    </footer>
+  </body>
+  <script>
+    function validateForm() {
+      let pass=document.getElementById("pass").value;
+      let confirm=document.getElementById("confirm").value;
+     let uname=document.getElementById("uname").value;
+      let email=document.getElementById("email").value;
+      var emailRegex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+     if (uname=="") {
+      document.getElementById("name_error").innerHTML="* Required";
+    return false; 
+  } 
+     if (email=="") {
+      document.getElementById("email_error").innerHTML="* Required";
+    return false; 
+  }if (pass!=confirm) {
+      document.getElementById("pass_error").innerHTML="Passwords DID NOT match";
+
+    return false; 
+  }if (pass.length < 8) {
+      document.getElementById("pass_error").innerHTML="Passwords MUST be 8 characters length";
+
+    return false; 
+  }else{
+    return true;
+    
+    }
+  }
+   
+  </script>

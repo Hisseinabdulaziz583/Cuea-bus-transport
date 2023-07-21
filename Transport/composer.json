@@ -1,0 +1,8 @@
+
+
+
+{
+  "require": {
+    "paymentsds/mpesa-php-sdk": "^2.0.2"
+  }
+}
